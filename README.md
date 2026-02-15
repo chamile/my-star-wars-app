@@ -1,50 +1,50 @@
-# Welcome to your Expo app 👋
+# Star Wars App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Video
+https://files.fm/u/2guchskduj
 
-## Get started
+## Environment
 
-1. Install dependencies
+Create a .env file in the root directory with:
 
-   ```bash
-   npm install
-   ```
+API_URL=https://swapi.info/api
 
-2. Start the app
+## How to Run
 
-   ```bash
-   npx expo start
-   ```
+Install dependencies:
+npm install
 
-In the output, you'll find options to open the app in a
+Start the app:
+npx expo start
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+For iOS:
+npm run ios
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+For Android:
+npm run android
 
-## Get a fresh project
+## Explanation/Reasons
 
-When you're ready, run:
+- Used fetch API instead of Axios since this is a simple app with basic API calls
+- No Redux or central state management - used local state with useState since the app is small
+- Error handling done with toast messages using react-native-toast-message
 
-```bash
-npm run reset-project
-```
+## Code Structure
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- app/ - screens and navigation
+  - _layout.tsx - root layout
+  - index.tsx - entry point
+  - home-screen.tsx - main list with pagination
+  - details-screen.tsx - character details
 
-## Learn more
+- components/ - reusable components
+  - add-person-modal.tsx - modal to create character
+  - footer-loader.tsx - loading spinner for pagination
+  - person-item.tsx - list item component
+  - search-filter.tsx - search input
 
-To learn more about developing your project with Expo, look at the following resources:
+- services/
+  - api.ts - API calls (getPeople, createPerson)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- types/
+  - common.ts - TypeScript types

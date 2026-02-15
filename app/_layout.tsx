@@ -1,6 +1,7 @@
 import { Stack } from 'expo-router';
 import 'react-native-reanimated';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Toast from 'react-native-toast-message';
 
 export default function RootLayout() {
 
@@ -8,9 +9,9 @@ export default function RootLayout() {
     <SafeAreaView style={{ flex: 1 }}>
       <Stack>
         <Stack.Screen name="home-screen" options={{ headerShown: false }} />
-        <Stack.Screen name="details-screen" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
+        <Stack.Screen name="details-screen" options={{ headerShown: true, title: "Person" }} />
       </Stack>
+      <Toast />
     </SafeAreaView>
 
   );
